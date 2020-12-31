@@ -12,16 +12,23 @@
 (function() {
     'use strict';
     let re = new RegExp('https://play.kotlinlang.org/koans/([^/]+)/([^/]+)/Task.kt');
+    let dict = {
+        "Hello, world!": "Wxsfim9WnMo"
+    };
     var url = window.location.href;
     var groups = re.exec(url);
     var level = groups[1];
-    var task = groups[2];
-    var d = $("div.editor-content");
-    var iframe = $('<iframe>', {
-        width: 560,
-        height: 315,
-        src: "https://www.youtube.com/embed/NIVFgU5f2Rs",
-        frameborder: 0
-    });
+    var task = groups[2].replaceAll("%20", " ");
+    debugger;
+    var vcode = dict[task];
+    if (vcode) {
+        var d = $("div.editor-content");
+        var iframe = $('<iframe>', {
+            width: 560,
+            height: 315,
+            src: "https://www.youtube.com/embed/" + vcode,
+            frameborder: 0
+        });
+    }
     d.append(iframe);
 })();
