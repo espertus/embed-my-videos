@@ -13,13 +13,13 @@
     'use strict';
     let re = new RegExp('https://play.kotlinlang.org/koans/([^/]+)/([^/]+)/Task.kt');
     let dict = {
-        "Hello, world!": "Wxsfim9WnMo"
+        "Hello, world!": "Wxsfim9WnMo",
+        "Named arguments": "fv3UrKVm5c0"
     };
     var url = window.location.href;
     var groups = re.exec(url);
     var level = groups[1];
     var task = groups[2].replaceAll("%20", " ");
-    debugger;
     var vcode = dict[task];
     if (vcode) {
         var d = $("div.editor-content");
@@ -27,6 +27,7 @@
             width: 560,
             height: 315,
             src: "https://www.youtube.com/embed/" + vcode,
+            allowfullscreen: true,
             frameborder: 0
         });
     }
