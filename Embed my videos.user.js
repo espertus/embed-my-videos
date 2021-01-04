@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Embed my videos
 // @namespace    http://spertus.com
-// @version      0.1
+// @version      0.13
 // @description  show my videos
 // @author       Ellen
 // @match        https://play.kotlinlang.org/koans/*
@@ -14,7 +14,8 @@
     let re = new RegExp('https://play.kotlinlang.org/koans/([^/]+)/([^/]+)/Task.kt');
     let dict = {
         "Hello, world!": "Wxsfim9WnMo",
-        "Named arguments": "fv3UrKVm5c0"
+        "Named arguments": "fv3UrKVm5c0",
+        "Default arguments": "kOfJzX5v2o8"
     };
     var url = window.location.href;
     var groups = re.exec(url);
